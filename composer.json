@@ -1,0 +1,21 @@
+{
+    "name": "gallna/slim3-middleware",
+    "description": "A set of Slim3 Framework middleware",
+    "homepage": "https://github.com/gallna/slim3-middleware",
+    "require": {
+        "php": ">=5.5.0",
+        "pimple/pimple": "^3.0",
+        "psr/http-message": "^1.0"
+    },
+    "authors": [
+        {
+            "name": "Tomasz Jonik",
+            "email": "tom.jonik@hotmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Kemer\\Slim3\\Middleware\\": "src/Kemer/Slim3/Middleware"
+        }
+    }
+}
