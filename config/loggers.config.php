@@ -23,7 +23,7 @@ return [
     },
 
     "gelf-tcp-handler" => function(Container $container) {
-        $transport = new Gelf\Transport\TcpTransport("graylog.graylog.stream.weeb.online", 12203);
+        $transport = new Gelf\Transport\TcpTransport($container["gelf-host"], $container["gelf-port"]);
         $publisher = new Gelf\Publisher();
         $publisher->addTransport($transport);
         return new Monolog\Handler\GelfHandler($publisher);
