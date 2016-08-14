@@ -5,7 +5,9 @@
     "require": {
         "php": ">=5.5.0",
         "pimple/pimple": "^3.0",
-        "psr/http-message": "^1.0"
+        "psr/http-message": "^1.0",
+        "graylog2/gelf-php": "^1.5",
+        "monolog/monolog": "~1.2"
     },
     "authors": [
         {
