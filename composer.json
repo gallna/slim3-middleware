@@ -17,6 +17,7 @@
     ],
     "autoload": {
         "psr-4": {
+            "Kemer\\Slim3\\Exceptions\\": "src/Kemer/Slim3/Exceptions",
             "Kemer\\Slim3\\Middleware\\": "src/Kemer/Slim3/Middleware"
         }
     }
