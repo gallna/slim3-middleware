@@ -8,13 +8,12 @@ return [
 
     "logger" => function(Container $container) {
         $logger = new Monolog\Logger(getenv("PROJECT_NAME"));
-        if (isset($container["amqp-broker"])) {
-            $logger->pushHandler($container["gelf-amqp-handler"]);
-        } elseif($container["gelf-host"] && $container["gelf-port"]) {
+        if($container["gelf-host"] && $container["gelf-port"]) {
             $logger->pushHandler($container["gelf-tcp-handler"]);
-        } else {
-            $logger->pushHandler($container["error-log-handler"]);
+        } elseif (isset($container["amqp-broker"])) {
+            $logger->pushHandler($container["gelf-amqp-handler"]);
         }
+        $logger->pushHandler($container["error-log-handler"]);
         return $logger;
     },
 
