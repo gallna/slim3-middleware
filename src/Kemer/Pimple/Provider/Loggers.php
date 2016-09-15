@@ -7,15 +7,18 @@ use Pimple\Container;
 /**
  * Pimple container service provider.
  */
-class Loggers implements Pimple\ServiceProviderInterface
+class Loggers implements ServiceProviderInterface
 {
     private $services = [];
     /**
      * Instantiate the provider.
      * @param array $services
      */
-    public function __construct(array $services)
+    public function __construct(array $services = [])
     {
+        if (empty($services)) {
+            $services = include dirname(__DIR__)."/../../../config/loggers.config.php";
+        }
         $this->services = $services;
     }
 
